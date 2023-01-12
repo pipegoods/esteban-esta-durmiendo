@@ -43,29 +43,49 @@ function App() {
 
   return (
     <main className="grid place-content-center min-h-screen bg-slate-800 text-white px-6">
-      <h1 className="text-3xl font-bold">
-        Hola, Esteban está
-        {isSleeping ? (
-          <span className="text-red-500"> durmiendo.</span>
-        ) : (
-          <span className="text-green-500"> despierto.</span>
-        )}
-      </h1>
-      <br />
-      <span className="text-gray-200 font-semibold text-sm flex gap-3 items-center">
-        <picture className="inline-block mr-2 w-9 h-9 aspect-square">
-          <source srcSet="/flag-australia.png" type="image/png" />
-          <img src="/flag-australia.png" alt="Australia" />
-        </picture>
-        {timeAustralia}
-      </span>
-      <span className="text-gray-200 font-semibold text-sm flex gap-3 items-center">
-        <picture className="inline-block mr-2 w-9 h-9 aspect-square">
-          <source srcSet="/flag-colombia.png" type="image/png" />
-          <img src="/flag-colombia.png" alt="Australia" />
-        </picture>
-        {timeColombia}
-      </span>
+      <div className="flex gap-5 items-start flex-col md:flex-row md:items-center">
+        <aside>
+          {isSleeping ? (
+            <img
+              className="w-40 h-40 aspect-square rounded-full"
+              src="/esteban-durmiendo-playa.png"
+              alt="Esteban durmiendo en la playa"
+            />
+          ) : (
+            <img
+              className="w-40 h-40 aspect-square rounded-full"
+              src="/esteban-despierto-tayrona.png"
+              alt="Esteban despierto en el tayrona"
+            />
+          )}
+        </aside>
+
+        <article>
+          <h1 className="text-3xl font-bold">
+            Hola, Esteban está
+            {isSleeping ? (
+              <span className="text-red-500"> durmiendo.</span>
+            ) : (
+              <span className="text-green-500"> despierto.</span>
+            )}
+          </h1>
+          <br />
+          <span className="text-gray-200 font-semibold text-sm flex gap-3 items-center">
+            <picture className="inline-block mr-2 w-9 h-9 aspect-square">
+              <source srcSet="/flag-australia.png" type="image/png" />
+              <img src="/flag-australia.png" alt="Australia" />
+            </picture>
+            {timeAustralia}
+          </span>
+          <span className="text-gray-200 font-semibold text-sm flex gap-3 items-center">
+            <picture className="inline-block mr-2 w-9 h-9 aspect-square">
+              <source srcSet="/flag-colombia.png" type="image/png" />
+              <img src="/flag-colombia.png" alt="Australia" />
+            </picture>
+            {timeColombia}
+          </span>
+        </article>
+      </div>
     </main>
   );
 }
